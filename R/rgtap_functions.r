@@ -7,7 +7,7 @@
 #' @export
 #' @examples Examples
 #' extractvar_function()
-extractvar_function <- function (solution.dir, solution.name, var.map, solution.out){
+extractvar <- function (solution.dir, solution.name, var.map, solution.out){
     system(
            paste("sltoht",
                  paste(solution.dir,solution.name,sep=""),
