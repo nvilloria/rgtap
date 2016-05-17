@@ -7,19 +7,33 @@
 extractvar(solution.dir, solution.name, var.map, solution.out)
 }
 \arguments{
-\item{solution.dir}{Directory where the solution file is stored.}
+\item{solution.dir}{Directory where the solution file SL4 is stored.}
 
-\item{solution.name}{Name of the solution, including suffix}
+\item{solution.name}{Name of the solution file SL4, without a suffix.}
 
-\item{var.map}{A GEMPACK variable map to be used with "sltoht". Need to add a reference to the GTAP manual.}
+\item{var.map}{A GEMPACK variable map to be used with
+\code{sltoht}. See
+\url{http://www.copsmodels.com/gpmanual.htm#gpd4.8} for details
+about \code{sltoht}.}
 
-\item{solution.out}{It's the name (or directory?) where you put the solution}
+\item{solution.out}{Path and name of the HAR with the variables
+from var.map. Must include a suffix, preferable .sol.}
+}
+\value{
+A HAR file with variables in var.map.
 }
 \description{
-Extract variables for GEMPACK solution file(s).
+\code{extractvar} uses GEMPACK's \code{sltoht} to extract the
+variables defined in var.map from a GEMPACK solution file (SL4:
+suffixed .sl4) and writes them to a HAR file (generally suffixed
+.sol).
 }
 \examples{
-Examples
-extractvar()
+Examples:
+\dontrun{ extractvar(solution.dir = "d:/nvilloria/Dropbox/papers/lusupply/SC2010Biofuels/",
+solution.name = "Long",
+var.map = "SC2010Biofuels.map",
+solution.out = "../Results/Long.sol")
+}
 }
 
