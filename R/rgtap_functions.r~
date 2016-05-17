@@ -1,4 +1,4 @@
-#' Extract variables for GEMPACK solution file(s).
+#' Extract variables for GEMPACK solution files.
 #'
 #' @param solution.dir Directory where the solution file is stored.
 #' @param solution.name Name of the solution, including suffix

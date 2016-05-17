@@ -2,7 +2,7 @@
 % Please edit documentation in R/rgtap_functions.r
 \name{extractvar}
 \alias{extractvar}
-\title{Extract variables for GEMPACK solution files.}
+\title{Extract variables for GEMPACK solution file(s).}
 \usage{
 extractvar(solution.dir, solution.name, var.map, solution.out)
 }
@@ -16,7 +16,7 @@ extractvar(solution.dir, solution.name, var.map, solution.out)
 \item{solution.out}{It's the name (or directory?) where you put the solution}
 }
 \description{
-Extract variables for GEMPACK solution files.
+Extract variables for GEMPACK solution file(s).
 }
 \examples{
 Examples
