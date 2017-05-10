@@ -2,12 +2,12 @@ Package: rgtap
 Title: An R package for reading GEMPACK data and solution files
 Version: 0.0.0.9000
 Authors@R: person("Nelson", "Villoria", email = "nvilloria@k-state.edu", role = c("aut", "cre"))
-Description: Offers two functions that combine with GEMPAC utilities to
+Description: Offers two functions that combine with GEMPACK utilities to
     facilitate reading GEMPACK data and files into R.
 Depends:
     R (>= 3.2.2)
 License: GNU GENERAL PUBLIC LICENSE
 LazyData: true
-RoxygenNote: 5.0.1.9000
+RoxygenNote: 5.0.1
 URL: https://github.com/nvilloria/rgtap
 BugReports: https://github.com/nvilloria/rgtap/issues

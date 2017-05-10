@@ -25,7 +25,8 @@ extractvar <- function (solution.dir, solution.name, var.map, solution.out){
     system(
            paste("sltoht",
                  paste(solution.dir,solution.name,sep=""),
-                 paste("-map=",var.map,sep=""),solution.out)
+                 paste("-map=",var.map,sep=""),solution.out),
+        ignore.stdout = TRUE
            )
 }
 
@@ -33,17 +34,26 @@ extractvar <- function (solution.dir, solution.name, var.map, solution.out){
 #' Read specific header of solution files, convert them into CSV files,
 #' and read them into R.
 #'
-#' @param solution.out It's the name (or directory?) where you put the solution
-#' @param csv.out name of the csv file you want to read from.
-#' @param header header which is read.
+#' @param solution.dir Directory where the solution file SL4 is stored.
+#' @param solution.out Path and name of the HAR with the variables
+#' from var.map. Must include a suffix, e.g., .sol or .har.
+#' @param csv.out name of the csv file to which header is written to. The resulting csv file will be also read back in R using \code{read.csv()}.
+#' @param header number of the header in the map file used in var.map.
 #' @export
 #' @examples Examples
 #' readsol()
-readsol <- function (solution.out, csv.out, header){
-    system(
-           paste("har2csv",solution.out,csv.out,header,sep=" ")
-           )
-    y  <- read.csv(csv.out)
+readsol <- function (solution.dir, solution.out, csv.out, header){
+    har2csv.status <- system(
+        paste("har2csv",
+              paste(solution.dir,solution.out, sep=""),
+              csv.out, header, sep=" "),
+        ignore.stdout = TRUE
+        )
+    if( har2csv.status == 0){
+        y  <- read.csv(csv.out)
+    }else{
+        y <- NA
+    }
 }
 
 #' Generates a random string of characters.
